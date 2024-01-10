@@ -15,7 +15,10 @@ build-docker: setup setup-builder login
 	sudo docker buildx build . \
 	  -f build/Dockerfile \
 	  --builder=thesisbuilder \
-	  --platform=linux/amd64,linux/arm64 \
-	  -t thesisbkn/ssh:latest \
-	  -t thesisbkn/ssh:"$(git describe --tags --abbrev=0)-$(git log -n  1 --pretty=tformat:'%Cred%h%Creset')" \
+	  --platform=linux/amd64 \
+	  -t thesisbkn/d3poplus:latest \
+	  -t thesisbkn/d3poplus:"(git log -n  1 --pretty=tformat:'%Cred%h%Creset')" \
 	  --push
+
+run: setup login
+	sudo docker run -d -p 9922:22 -p 8888:8888 --name thesis -e DEV='True' thesisbkn/ssh:latest
