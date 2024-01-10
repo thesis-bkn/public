@@ -21,4 +21,4 @@ push:
 build-docker: setup login buildx push
 
 run: setup
-	sudo docker run -d -p 9922:22 -p 8888:8888 --name thesis -e DEV='True' thesisbkn/ssh:latest
+	sudo docker run -d -p 9922:22 -p 8888:8888 --name thesis -e DEV='True' thesisbkn/d3poplus:latest
