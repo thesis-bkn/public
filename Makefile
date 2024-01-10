@@ -12,10 +12,13 @@ buildx:
 	sudo docker build . \
 	  -f build/Dockerfile \
 	  -t thesisbkn/d3poplus:latest \
-	  -t thesisbkn/d3poplus:"$(git log -n  1 --pretty=tformat:'%Cred%h%Creset')" \
-	  --push
+	  -t thesisbkn/d3poplus:$(shell git log -n 1 --pretty=format:'%h')
 
-build-docker: setup login buildx
+push:
+	sudo docker push thesisbkn/d3poplus:latest \
+	sudo docker push thesisbkn/d3poplus:$(shell git log -n 1 --pretty=format:'%h')
+
+build-docker: setup login buildx push
 
 run: setup login
 	sudo docker run -d -p 9922:22 -p 8888:8888 --name thesis -e DEV='True' thesisbkn/ssh:latest
