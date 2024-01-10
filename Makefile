@@ -15,8 +15,8 @@ buildx:
 	  -t thesisbkn/d3poplus:$(shell git log -n 1 --pretty=format:'%h')
 
 push:
-	sudo docker push thesisbkn/d3poplus:latest
 	sudo docker push thesisbkn/d3poplus:$(shell git log -n 1 --pretty=format:'%h')
+	sudo docker push thesisbkn/d3poplus:latest
 
 build-docker: setup login buildx push
 
