@@ -12,7 +12,7 @@ buildx:
 	sudo docker build . \
 	  -f build/Dockerfile \
 	  -t thesisbkn/d3poplus:latest \
-	  -t thesisbkn/d3poplus:"(git log -n  1 --pretty=tformat:'%Cred%h%Creset')" \
+	  -t thesisbkn/d3poplus:"$(git log -n  1 --pretty=tformat:'%Cred%h%Creset')" \
 	  --push
 
 build-docker: setup login buildx
