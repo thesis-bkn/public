@@ -1,5 +1,4 @@
-#FROM python:3.11.5-slim
-FROM pytorch/pytorch:2.1.2-cuda11.8-cudnn8-devel
+FROM python:3.11.5-slim
 
 WORKDIR /code/
 
