@@ -2,8 +2,9 @@
 # Script to install python
 
 export PYTHON_VERSION="3.11.5"
+export DEBIAN_FRONTEND=noninteractive
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y build-essential pkg-config cmake-data zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
+sudo apt-get update && apt-get install -y build-essential pkg-config cmake-data zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev
 
 echo "Install python"
 sudo apt-get install libssl-dev openssl
@@ -13,3 +14,5 @@ cd Python-$PYTHON_VERSION || echo "Failed to install python"
 ./configure
 make
 sudo make install
+
+Python-$PYTHON_VERSION/python -m pip install --upgrade pip
