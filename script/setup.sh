@@ -15,4 +15,4 @@ cd Python-$PYTHON_VERSION || echo "Failed to install python"
 make
 sudo make install
 
-Python-$PYTHON_VERSION/python -m pip install --upgrade pip
+python -m pip install --upgrade pip
