@@ -6,3 +6,5 @@ accelerate==0.25.0
 open-clip-torch==2.23.0
 clip-interrogator==0.6.0
 ipywidgets==7.4.2
+opencv-python=4.9.0.80
+pillow=10.2.0
