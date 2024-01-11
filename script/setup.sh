@@ -3,7 +3,9 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt-get update && apt-get install -y build-essential pkg-config cmake-data zlib1g zlib1g-dev libssl-dev libbz2-dev libsqlite3-dev libffi-dev
+sudo apt-get update && apt-get install -y \
+    build-essential pkg-config cmake-data zlib1g zlib1g-dev \
+    libssl-dev libbz2-dev libsqlite3-dev libffi-dev lzma liblzma-dev libbz2-dev
 
 echo "Install python"
 sudo apt-get install libssl-dev openssl
